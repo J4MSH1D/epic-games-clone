@@ -10,13 +10,7 @@ const router = createRouter({
     {
       path: "/",
       name: "auth",
-      component: Auth,
-      beforeEnter: () => {
-        const userStore = useUser();
-        if (userStore.user) {
-          return { path: "/home" };
-        }
-      },
+      component: Auth
     },
     {
       path: "/home",
