@@ -28,6 +28,17 @@ const router = createRouter({
         }
       }
     },
+    {
+      path: "/profile",
+      name: "profile",
+      component: () => import("../views/Profile.vue"),
+      beforeEnter: () => {
+        const userStore = useUser()
+        if(!userStore.user){
+          return { path: "/" }
+        }
+      }
+    }
   ],
 });
 
