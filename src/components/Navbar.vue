@@ -1,5 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { useUser } from "../stores/user.js"
+const userStore = useUser()
 </script>
 <template>
   <div
@@ -9,9 +11,9 @@ import { RouterLink } from "vue-router";
       <img class="h-10" src="../assets/images/Logo.png" alt="logo" />
     </div>
     <div class="font-semibold text-lg">
-      <RouterLink to="/home">Home</RouterLink>
-      <RouterLink class="mx-5 border rounded px-2 py-1 transition hover:text-slate-900 hover:bg-white " to="/">Login</RouterLink>
-      <span class="cursor-pointer border rounded px-2 py-1 transition hover:text-slate-900 hover:bg-white">Log Out</span>
+      <RouterLink v-if="userStore.user" to="/home">Home</RouterLink>
+      <span @click="userStore.signIn" v-if="!userStore.user" class="mx-5 cursor-pointer border rounded px-2 py-1 transition hover:text-slate-900 hover:bg-white" to="/">Login</span>
+      <span @click="userStore.signOut" v-if="userStore.user" class="mx-5 cursor-pointer border rounded px-2 py-1 transition hover:text-slate-900 hover:bg-white">Log Out</span>
     </div>
   </div>
 </template>
