@@ -14,7 +14,6 @@ const userStore = useUser()
       <RouterLink v-if="userStore.user" to="/home">Home</RouterLink>
 			<RouterLink v-if="userStore.user" to="/profile" class="md:mx-5 mx-3">Profile</RouterLink>
       <span @click="userStore.signIn" v-if="!userStore.user" class="cursor-pointer border rounded md:px-2 px-1 py-1 transition hover:text-slate-900 hover:bg-white" to="/">Login</span>
-      <span @click="userStore.signOut" v-if="userStore.user" class="cursor-pointer border rounded md:px-2 px-1 py-1 transition hover:text-slate-900 hover:bg-white">Log Out</span>
     </div>
   </div>
 </template>
