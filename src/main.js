@@ -9,6 +9,9 @@ import { useUser } from "./stores/user"
 // tailwind css
 import "./tailwind/index.css"
 
+// Base css
+import "./assets/css/base.css"
+
 const app = createApp(App)
 
 app.use(createPinia())
