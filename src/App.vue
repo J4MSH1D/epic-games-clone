@@ -1,9 +1,14 @@
 <script setup>
 import { RouterView } from "vue-router";
+import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
+  <Navbar />
   <div class="app">
     <RouterView />
   </div>
+  <aside
+    class="fixed top-0 left-0 w-screen h-screen -z-40 bg-gradient-to-r from-gray-900 to-slate-600"
+  ></aside>
 </template>
