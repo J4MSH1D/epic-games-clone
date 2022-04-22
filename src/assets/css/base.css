@@ -16,6 +16,11 @@ body {
   border-radius: 10px;
   height: 80vh !important;
 }
+@media (max-width: 500px) {
+  .swiper-slide {
+    height: 30vh !important;
+  }
+}
 .swiper-slide img {
   height: 100%;
   width: 100%;
