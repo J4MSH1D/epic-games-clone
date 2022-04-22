@@ -10,3 +10,14 @@ body {
 .fade-leave-to {
   opacity: 0;
 }
+.swiper-slide {
+  margin-top: 70px;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 80vh !important;
+}
+.swiper-slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

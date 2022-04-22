@@ -12,6 +12,9 @@ import "./tailwind/index.css"
 // Base css
 import "./assets/css/base.css"
 
+// Swiper css
+import 'swiper/css';
+
 const app = createApp(App)
 
 app.use(createPinia())
