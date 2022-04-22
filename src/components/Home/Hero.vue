@@ -1,6 +1,6 @@
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Pagination, EffectCoverflow } from "swiper";
+import { Pagination, EffectCoverflow, Autoplay } from "swiper";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 const pagination = {
@@ -8,7 +8,7 @@ const pagination = {
   dynamicBullets: true,
 };
 
-const modules = [Pagination, EffectCoverflow];
+const modules = [Pagination, EffectCoverflow, Autoplay];
 </script>
 <template>
   <div class="w-screen">
@@ -22,6 +22,10 @@ const modules = [Pagination, EffectCoverflow];
         depth: 600,
         modifier: 1,
         slideShadows: true,
+      }"
+      :autoplay="{
+        delay: 5000,
+        disableOnInteraction: false,
       }"
       :modules="modules"
       :slides-per-view="1.12"
