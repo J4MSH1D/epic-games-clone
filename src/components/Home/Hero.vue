@@ -1,32 +1,36 @@
 <script setup>
+import Title from "../Title.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, EffectCoverflow, Autoplay } from "swiper";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
 const pagination = {
   clickable: true,
   dynamicBullets: true,
+};
+
+const coverflowEffect = {
+  rotate: 60,
+  stretch: 0,
+  depth: 600,
+  modifier: 1,
+  slideShadows: true,
+};
+
+const autoplay = {
+  delay: 5000,
+  disableOnInteraction: false,
 };
 
 const modules = [Pagination, EffectCoverflow, Autoplay];
 </script>
 <template>
   <div class="w-screen">
+    <Title title="Exclusives" />
     <Swiper
       :pagination="pagination"
       grab-cursor
       :effect="'coverflow'"
-      :coverflowEffect="{
-        rotate: 60,
-        stretch: 0,
-        depth: 600,
-        modifier: 1,
-        slideShadows: true,
-      }"
-      :autoplay="{
-        delay: 5000,
-        disableOnInteraction: false,
-      }"
+      :coverflowEffect="coverflowEffect"
+      :autoplay="autoplay"
       :modules="modules"
       :slides-per-view="1.12"
       :space-between="3"

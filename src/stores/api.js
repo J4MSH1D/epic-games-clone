@@ -1,10 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
-
 const link = import.meta.env.VITE_API_LINK
-
-const host = import.meta.env.VITE_API_HOST
-
 const key = import.meta.env.VITE_API_KEY
 
 export const base = defineStore({
@@ -21,5 +17,8 @@ export const base = defineStore({
         console.log(err.message);
       }
     },
+    getCurrentData(id) {
+      return this.data.find(item => item.id === id);
+    }
   },
 });

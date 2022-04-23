@@ -10,7 +10,18 @@ const router = createRouter({
     {
       path: "/",
       name: "auth",
-      component: Auth
+      component: Auth,
+    },
+    {
+      path: "/:id/preview",
+      name: "preview",
+      component: () => import("../views/Preview.vue"),
+      beforeEnter: () => {
+        const userStore = useUser();
+        if (!userStore.user) {
+          return { path: "/" };
+        }
+      },
     },
     {
       path: "/home",
@@ -35,6 +46,9 @@ const router = createRouter({
       },
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 };
+  },
 });
 
 export default router;
