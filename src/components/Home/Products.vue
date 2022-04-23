@@ -11,7 +11,7 @@ defineProps({
 });
 </script>
 <template>
-  <Title title="New on Market" />
+  <Title title="All Games" />
   <div class="w-screen px-10 md:my-10 my-5">
     <Swiper
       :slides-per-view="3.2"
