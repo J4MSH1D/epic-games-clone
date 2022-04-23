@@ -13,7 +13,7 @@ const currentGame = data.getCurrentData(id);
   >
     <img
       :src="currentGame.background_image"
-      class="fixed w-full h-full object-cover -z-5"
+      class="fixed w-screen h-screen top-0 left-0 object-cover -z-5"
       alt="background"
     />
     <div class="px-10 text-white mt-40 relative z-20">
