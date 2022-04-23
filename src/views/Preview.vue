@@ -9,7 +9,7 @@ const currentGame = data.getCurrentData(id);
 </script>
 <template>
   <div
-    class="w-screen overflow-hidden mt-50 h-screen bg-slate-500 relative after:fixed after:w-screen after:h-screen after:top-0 after:bg-slate-800 after:z-10 after:opacity-50"
+    class="w-screen overflow-hidden md:mt-50 min-h-screen bg-slate-500 relative after:fixed after:w-screen after:h-screen after:top-0 after:bg-slate-800 after:z-10 after:opacity-50"
   >
     <img
       :src="currentGame.background_image"
@@ -68,7 +68,7 @@ const currentGame = data.getCurrentData(id);
           </SwiperSlide>
         </Swiper>
       </div>
-      <div class="mt-10">
+      <div class="mb-20 mt-10">
           <button @click="router.go(-1)" class="transition hover:bg-white hover:text-black font-bold rounded py-1 px-3 capitalize border-2 border-white">Go back</button>
       </div>
     </div>
